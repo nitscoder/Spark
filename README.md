@@ -93,15 +93,16 @@ recyView.addOnItemClickListener(this);
 For this, Activity or Fragment should implement listerner : 
 <b>SparkRecyclerView.OnItemClickListener</b>
 ```
+
+<b> Set LoadMoreListener if need , It should be called after setAdapter</b> See following : 
 ```xml
-//Set LoadMoreListener if need , It should be called after setAdapter
 recyView.addLoadMoreListener(this);
 For this, Activity or Fragment should implement listerner : 
-<b>SparkRecyclerView.OnItemClickListener</b>
+<b>SparkRecyclerView.OnItemClickListener</b>```
 ```xml
-When list reached at bottom during scrolling then <b>onLoadMore</b> method will be called and one 
+When list reached at bottom during scrolling then onLoadMore method will be called and one 
 progress will be started at bottom automatically. And you will start API calling from <b>onLoadMore</b> 
-method and when API compelted, you have to call <b>recyView.setDataLoadingFromServerCompleted();</b> method 
+method and when API compelted, you have to call recyView.setDataLoadingFromServerCompleted(); method 
 to stop the progress at bottom, like this :
 
 onRespose(){ // This is onResponse of API call, This can defer due to which library youhave used
@@ -112,6 +113,12 @@ onRespose(){ // This is onResponse of API call, This can defer due to which libr
   recyView.setDataLoadingFromServerCompleted();
 }
 
+```
+```xml
+Library contains some utils methods , class names are :
+DateTimeUtils : 
+ValidationUtils : 
+SizeNDimensionUtils : 
 ```
 
 
