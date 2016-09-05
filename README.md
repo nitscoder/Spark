@@ -73,13 +73,13 @@ public class MoviesAdapter extends SparkRecyclerView.EasyAdapter {
 ```
 Code Sample for Activity or Fragment : 
 
+<b>Get spark recycler view and create Adapter instance</b>
 ```xml
-//Get spark recycler view and create Adapter instance
 SparkRecyclerView recyView = (SparkRecyclerView) findViewById(R.id.list);
 adapter = new MoviesAdapter(this,list);
 ```
+<b>Set headerview if need</b>
 ```xml
-//Set headerview if need
 adapter.setHeaderView(header);
 ```
 ```xml
@@ -87,8 +87,8 @@ LinearLayoutManager manager = new LinearLayoutManager(this);
 recyView.setLayoutManager(manager);
 recyView.setAdapter(adapter);
 ```
+<b>Set onItemClickListener if need</b>
 ```xml
-//Set onItemClickListener if need
 recyView.addOnItemClickListener(this);
 For this, Activity or Fragment should implement listerner : 
 <b>SparkRecyclerView.OnItemClickListener</b>
@@ -114,8 +114,8 @@ onRespose(){ // This is onResponse of API call, This can defer due to which libr
 }
 
 ```
+<b>Library contains some utils methods , class names are :</b>
 ```xml
-Library contains some utils methods , class names are :
 DateTimeUtils : 
 ValidationUtils : 
 SizeNDimensionUtils : 
