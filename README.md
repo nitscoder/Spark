@@ -23,9 +23,9 @@ compile 'com.nitscoder:spark:0.0.1_beta'
 Defining SparkRecyclerView in xml
 ```xml
 <com.nitesh.spark.customview.SparkRecyclerView
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+android:id="@+id/list"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"/>
 ```
 Adapter should extend <b>SparkRecyclerView.EasyAdapter</b> for Example : 
  
@@ -74,20 +74,42 @@ public class MoviesAdapter extends SparkRecyclerView.EasyAdapter {
 Code Sample from Activity or Fragment : 
 
 ```xml
-//get spark recycler view
+//get spark recycler view and create Adapter instance
 SparkRecyclerView recyView = (SparkRecyclerView) findViewById(R.id.list);
 adapter = new MoviesAdapter(this,list);
-
+```
+```xml
 //set headerview if need
 adapter.setHeaderView(header);
+```
+```xml
 LinearLayoutManager manager = new LinearLayoutManager(this);
 recyView.setLayoutManager(manager);
 recyView.setAdapter(adapter);
+```
+```xml
 //set onItemClickListener if need
 recyView.addOnItemClickListener(this);
+for this Activity or Fragment should implement listerner : 
+<b>SparkRecyclerView.OnItemClickListener</b>
+```
+```xml
 //set LoadMoreListener if need , This should be called after setAdapter
 recyView.addLoadMoreListener(this);
+for this Activity or Fragment should implement listerner : 
+<b>SparkRecyclerView.OnItemClickListener</b>
+```xml
+when list reached at bottom during scrolling then <i>onLoadMore</i> method will be called and one progress will be started at bottom automatically. And you will start API calling from onLoadMore method and when API complted then you have to call following method to stop the progress at bottom, like this :
+
+onRespose(){ // This is onResponse of API call, This can defer due to which library youhave used
+  //Adding more data to List that comes from server
+  adapter.notifyDataSetChanged();
+  recyView.setDataLoadingFromServerCompleted();
+}
+
 ```
+
+
 License
 =======
 
