@@ -33,10 +33,9 @@ compile 'com.nitscoder:spark:0.0.1_beta2'
 ```
 #How to Use
 
-Please check Sample
+Please check [Sample][1]
 
-```
-<b>Library contains some utils methods , class names are :</b>
+<b>Library also contains some utils methods , class names are :</b>
 ```xml
 DateTimeUtils : 
 ValidationUtils : 
@@ -60,4 +59,4 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
+[1]: https://github.com/nitscoder/Spark/tree/master/SparkSample
