@@ -15,6 +15,19 @@ Grab via Maven:
 </dependency>
 ```
 or Gradle:
+<b>Add jcenter() in Project level build.gradle file </b>
+```groovy
+buildscript {
+    repositories {
+        jcenter()
+        ........
+    }
+    dependencies {
+        ..........
+    }
+}
+```
+<b>Add following compile line to your app level build.gradle file </b>
 ```groovy
 compile 'com.nitscoder:spark:0.0.1_beta2'
 ```
